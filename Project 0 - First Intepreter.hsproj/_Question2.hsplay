@@ -1,0 +1,2 @@
+-- Haskell Playground 1.0
+interp $ "if0 9*9 then 9+9 else 1*7"

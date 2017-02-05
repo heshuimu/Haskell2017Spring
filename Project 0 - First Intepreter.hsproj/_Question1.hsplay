@@ -1,0 +1,3 @@
+-- Haskell Playground 1.0
+parseAE "8*9+7"
+interp $ "(8+9)*7"
