@@ -32,10 +32,9 @@ expr :: Parser AEE
 expr = buildExpressionParser operators term
 
 operators = [[ inFix "*" Multi AssocLeft,               
-               inFix "/" Divis AssocLeft,
-               inFix "+" Plus AssocLeft, 
-               inFix "-" Minus AssocLeft
-               ]]
+               inFix "/" Divis AssocLeft],
+             [ inFix "+" Plus AssocLeft, 
+               inFix "-" Minus AssocLeft]]
 
 numExpr :: Parser AEE
 numExpr = do i <- integer lexer
