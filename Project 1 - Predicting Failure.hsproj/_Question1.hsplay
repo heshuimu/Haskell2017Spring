@@ -1,0 +1,16 @@
+-- Haskell Playground 1.0
+parseABE "1 + 18 / (if true && 7 <= 4 then 6 else 0)"
+interp "1 + 18 / (if true && 7 <= 4 then 6 else 0)"
+
+parseABE "0 + 18 / 9 * (if true && 2 <= 4 && isZero 0 then 3 else 0)"
+optimize(parseABE "0 + 18 / 9 * (if true && 2 <= 4 && isZero 0 then 3 else 0)")
+interp "1 + 18 / 9 * (if true && 2 <= 4 && isZero 0 then 3 else 0)"
+optimizedInterp "1 + 18 / 9 * (if true && 2 <= 4 && isZero 0 then 3 else 0)"
+
+parseABE "if 2 / (1-1) <= 7 then false else true"
+interp "if 2 / (1-1) <= 7 then false else true"
+
+interp "isZero 0"
+
+optimize (parseABE "if isZero 0 / 3 then if false then 5 else 7 else 2")
+optimizedInterp "if isZero 0 / 3 then if false then 5 else 7 else 2"
