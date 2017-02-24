@@ -1,3 +1,30 @@
 -- Haskell Playground 1.0
-parseAE "8/0+7"
-interp $ "0+7*7"
+-- Num test cases
+parseAE "8"
+interp "8"
+
+-- Plus test cases
+parseAE "1 + 2"
+interp "1 + 2"
+
+-- Minus test cases
+parseAE "1 - 2"
+interp "1 - 2"
+
+-- Multi test cases
+parseAE "3 * 2"
+interp "3 * 2"
+
+-- Divis test cases
+parseAE "3 / 2"
+interp "3 / 2"
+
+-- Precedence test cases
+parseAE "1 + 2 * 3"
+interp "1 + 2 * 3"
+parseAE "(1 + 2) * 3"
+interp "(1 + 2) * 3"
+parseAE "18 / (1 + 2) * 4"
+interp "18 / (1 + 2) * 4"
+parseAE "18 / 2 - 2 * 4"
+interp "18 / 2 - 2 * 4"

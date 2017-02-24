@@ -1,4 +1,6 @@
 -- Haskell Playground 1.0
+optimize (parseABE "1+0+1")
+
 parseABE "1 + 18 / (if true && 7 <= 4 then 6 else 0)"
 interp "1 + 18 / (if true && 7 <= 4 then 6 else 0)"
 

@@ -1,5 +1,7 @@
 {-# LANGUAGE GADTs #-}
 
+module ABEParser where
+
 import System.Random
 import Test.QuickCheck
 import Test.QuickCheck.Gen

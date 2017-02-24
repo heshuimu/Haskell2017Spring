@@ -1,2 +1,34 @@
 -- Haskell Playground 1.0
-interp $ "if0 9*9 then 9+9 else 1*7"
+-- Num test cases
+parseAEE "8"
+interp "8"
+
+-- Plus test cases
+parseAEE "1 + 2"
+interp "1 + 2"
+
+-- Minus test cases
+parseAEE "1 - 2"
+interp "1 - 2"
+
+-- Multi test cases
+parseAEE "3 * 2"
+interp "3 * 2"
+
+-- Divis test cases
+parseAEE "3 / 2"
+interp "3 / 2"
+
+-- Precedence test cases
+parseAEE "1 + 2 * 3"
+interp "1 + 2 * 3"
+parseAEE "(1 + 2) * 3"
+interp "(1 + 2) * 3"
+parseAEE "18 / (1 + 2) * 4"
+interp "18 / (1 + 2) * 4"
+parseAEE "18 / 2 - 2 * 4"
+interp "18 / 2 - 2 * 4"
+
+-- If0 test cases
+interp "if0 9*9 then 9+9 else 1*7"
+interp "if0 9-9+9-9 then 9+9 else 1*7"
