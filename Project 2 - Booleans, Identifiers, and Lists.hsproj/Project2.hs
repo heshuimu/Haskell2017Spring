@@ -1,6 +1,8 @@
 {-# LANGUAGE GADTs #-}
 
 module Project2 where
+  
+import System.IO.Unsafe
 
 -- Imports for QuickCheck
 import System.Random
@@ -227,7 +229,7 @@ evals (Seq a b) = seq (evals a) (evals b)
 evals (Print a) = let a_eval = (evals a)
                   in case a_eval of 
                     (Left anything) -> a_eval
-                    (Right x) -> seq (print a_eval) Right (Num 0)
+                    (Right x) -> seq (unsafePerformIO (print x)) (Right (Num 0))   
                     
 interps :: String -> Either String BBAE
 interps e = (evals (parseBBAE e))
@@ -290,7 +292,7 @@ eval env (Seq a b) = seq (eval env a) (eval env b)
 eval env (Print a) = let a_eval = (eval env a)
                   in case a_eval of 
                     (Left anything) -> a_eval
-                    (Right x) -> seq (print a_eval) (Right (Num 0))
+                    (Right x) -> seq (unsafePerformIO (print x)) (Right (Num 0))
 eval env (Bind i v b) = do
                            t <- (eval env v) 
                            eval ((i, t) : env) b

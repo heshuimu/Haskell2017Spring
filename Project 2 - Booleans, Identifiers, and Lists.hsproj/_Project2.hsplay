@@ -1,2 +1,3 @@
 -- Haskell Playground 1.0
 interps "seq (1 + 2) (2 + 3)"
+interps "print 1+3"
