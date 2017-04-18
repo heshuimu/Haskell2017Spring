@@ -1,4 +1,4 @@
-name: Project2BooleansIdentifiersandLists
+name: Project3FunctionsandElaboration
 version: 1.0
 cabal-version: 1.11
 build-type: Simple
@@ -6,8 +6,8 @@ license: AllRightsReserved
 stability: experimental
 x-ghc-framework-version: 7.10.3-6.29-1
 x-last-ide-version: HfM1.4.0
-Executable Project2BooleansIdentifiersandLists
-  main-is: Test.hs
+Executable Project3FunctionsandElaboration
+  main-is: Main.hs
   buildable: True
   build-depends:
       base -any,
@@ -15,5 +15,8 @@ Executable Project2BooleansIdentifiersandLists
       random -any,
       parsec -any
   other-modules:
+      Proj3Utils
+      Q1
       ParserUtils
-      Project2
+      Q2
+      Q3
