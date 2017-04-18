@@ -49,6 +49,6 @@ evalStatCFBE env (If x y z) = let (NumV t1) = (evalStatCFBE env x)
                                
 --Part 2
                                
-interpDynCFAE :: String -> CFAEValue
+interpStatCFAE :: String -> CFAEValue
 
-interpDynCFAE str = (evalStatCFBE [] (parseCFAE str))
+interpStatCFAE str = (evalStatCFBE [] (parseCFAE str))

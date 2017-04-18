@@ -28,9 +28,9 @@ elabCFBAE (BindX i b e) = (App (Lambda i (elabCFBAE e)) (elabCFBAE b))
 
 elabCFBAE (LambdaX x y) = (Lambda x (elabCFBAE y))
 
-elabCFBAE (AppX x y) = let (Lambda i b) = (elabCFBAE x)
-                           a = (elabCFBAE y)
-                         in (App (Lambda i b) a)
+elabCFBAE (AppX x y) = let a = (elabCFBAE x)
+                           b = (elabCFBAE y)
+                         in (App a b)
                           
 elabCFBAE (IdX x) = (Id x)
 
@@ -41,3 +41,14 @@ elabCFBAE (IfX x y z) = (If (elabCFBAE x) (elabCFBAE y) (elabCFBAE z))
 evalCFBAE :: EnvS -> CFBAE -> CFAEValue
 
 evalCFBAE env cfbae = evalStatCFBE env (elabCFBAE cfbae)
+
+--Part 4
+
+myPrelude :: EnvS
+
+myPrelude = [("inc", (ClosureV "x" (Plus (Id "x") (Num 1)) [])), 
+             ("dec", (ClosureV "x" (Minus (Id "x") (Num 1)) []))]
+
+interpCFABE :: String -> CFAEValue
+
+interpCFABE str = (evalCFBAE myPrelude (parseCFBAE str))
