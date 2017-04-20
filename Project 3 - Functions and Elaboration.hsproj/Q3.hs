@@ -49,6 +49,6 @@ myPrelude :: EnvS
 myPrelude = [("inc", (ClosureV "x" (Plus (Id "x") (Num 1)) [])), 
              ("dec", (ClosureV "x" (Minus (Id "x") (Num 1)) []))]
 
-interpCFABE :: String -> CFAEValue
+interpCFBAE :: String -> CFAEValue
 
-interpCFABE str = (evalCFBAE myPrelude (parseCFBAE str))
+interpCFBAE str = (evalCFBAE myPrelude (parseCFBAE str))
