@@ -10,9 +10,9 @@ genericTestCases = ["app (lambda x in if x - 7 then 0 else 444 / 2 + 1 * 7) 4",
 cfbaeTestCases = ["bind x = 886 in x + 1", 
                   "app inc 4", 
                   "app dec 4", 
-                  "app dec app inc app inc 4"]
+                  "app dec app inc app inc 4",
+                  "bind f = lambda x in x + 999 in app f 1"]
 
 testDynCFAE = mapM_ print (map interpDynCFAE genericTestCases)
 testStatCFAE = mapM_ print (map interpStatCFAE genericTestCases)
-
 testCFBAE = mapM_ print (map interpCFBAE cfbaeTestCases)
