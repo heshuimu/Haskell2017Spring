@@ -1,0 +1,19 @@
+name: Project4TypeChecking
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-6.29-1
+x-last-ide-version: HfM1.4.0
+Executable Project4TypeChecking
+  main-is: Main.hs
+  buildable: True
+  build-depends:
+      base -any,
+      parsec -any
+  other-modules:
+      Q4
+      Q1Q2
+      Proj4Utils
+      Q3

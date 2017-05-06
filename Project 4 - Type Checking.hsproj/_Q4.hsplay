@@ -1,0 +1,9 @@
+-- Haskell Playground 1.0
+typeof [] (parseFBAE "app (fix (lambda (ie:Nat) in (lambda (x:Nat) in if (isZero x) then x else x + app ie x - 1))) 5")
+
+interp "app (lambda (x:Bool) in if x then 3 else 1) (IsZero 0)"
+
+parseFBAE "(app (lambda (n:Nat) in (app (lambda (f:Nat) in (app (lambda (n:Nat) in (app f 3)) 1)) (lambda (x:Nat) in x + n))) 5)"
+interp "app (fix (lambda (ie:Nat) in (lambda (x:Nat) in if (isZero x) then x else x + app ie x - 1))) 5"
+
+eval [] (parseFBAE "app (fix (lambda (ie:Nat) in (lambda (x:Nat) in if (isZero x) then x else x + app ie x - 1))) 4")
